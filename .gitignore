@@ -1,0 +1,55 @@
+# === Qt Creator 自动生成的本地配置文件 ===
+*.user
+*.user.*
+*.pro.user*
+*.qbs.user*
+
+# === CMake 构建输出目录（根据你设置的 build 目录名修改）===
+/build*/
+/CMakeBuild*/
+/out/
+/bin/
+/lib/
+/dist/
+
+# === 编译生成文件 ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.autosave
+
+# === Qt 编译中间产物 ===
+*.moc
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.so
+*.so.*
+*.dll
+*.dylib
+*.lib
+*.exe
+
+# === Qt资源生成 ===
+qrc_*.cpp
+ui_*.h
+moc_*.cpp
+
+# === 编辑器临时文件 ===
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# === OS 系统缓存 ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === IDE相关（可选）===
+.vscode/
+.idea/
