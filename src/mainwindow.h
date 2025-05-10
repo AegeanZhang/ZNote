@@ -18,6 +18,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
+private:
+    void readSettings();
+    void writeSettings();
+
 private slots:
     void OpenFile();
 

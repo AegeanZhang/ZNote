@@ -11,7 +11,7 @@ public:
         return settings().value("lastOpenPath", QDir::homePath()).toString();
     }
 
-private:
+public:
     // 内部获取唯一 QSettings 实例（惰性初始化）
     static inline QSettings& settings() {
         static QSettings s("TingYu", "ZNote");
