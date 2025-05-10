@@ -53,3 +53,5 @@ desktop.ini
 # === IDE相关（可选）===
 .vscode/
 .idea/
+.vs
+x64
