@@ -5,6 +5,7 @@
 
 #include <QDebug>
 #include <QFileDialog>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -77,11 +78,29 @@ void MainWindow::OpenFile()
     QString fileName = QFileDialog::getOpenFileName(
         this,                         // 父窗口
         "选择文件",                    // 对话框标题
-        lastOpenPath,                          // 起始目录（""表示当前目录）
+        lastOpenPath,                 // 起始目录（""表示当前目录）
         "文本文件 (*.txt);;所有文件 (*.*)"  // 文件过滤器
         );
 
-    if (!fileName.isEmpty()) {
-        qDebug() << "选择的文件是:" << fileName;
+    if (fileName.isEmpty()) {
+        qDebug() << "没有选择文件";
+        return;
     }
+
+    qDebug() << "选择的文件是:" << fileName;
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "错误", "无法打开文件");
+        return;
+    }
+
+    QTextStream in(&file);
+    QString content = in.readAll();
+    ui->textEdit->setPlainText(content);
+    file.close();
+
+    //写入lastOpenPath
+    AppSettings::setLastOpenPath(QFileInfo(fileName).absolutePath());
+
 }

@@ -11,6 +11,10 @@ public:
         return settings().value("lastOpenPath", QDir::homePath()).toString();
     }
 
+    static inline void setLastOpenPath(const QString& path) {
+        settings().setValue("lastOpenPath", path);
+    }
+
 public:
     // 内部获取唯一 QSettings 实例（惰性初始化）
     static inline QSettings& settings() {
