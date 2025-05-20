@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "main_window.h"
+#include "./ui_main_window.h"
 
 #include "config/app_settings.h"
 
@@ -13,11 +13,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     
-
     readSettings();
 
-    //connect(ui->action_N, &QAction::triggered, this, &MainWindow::OpenFile);
     connect(ui->action_O, &QAction::triggered, this, &MainWindow::OpenFile);
+    connect(ui->action_X, &QAction::triggered, this, &MainWindow::Exit);
+
+    /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
+    ui->textEdit->setFont(font);*/
+
+    QFont font("Microsoft YaHei", 12);
+    font.setStyleStrategy(QFont::PreferAntialias);
+    ui->textEdit->setFont(font);
+    ui->textEdit->setAcceptRichText(false);
+    ui->textEdit->setStyleSheet("QTextEdit { line-height: 1.5; }");
 }
 
 MainWindow::~MainWindow()
@@ -103,4 +111,14 @@ void MainWindow::OpenFile()
     //写入lastOpenPath
     AppSettings::setLastOpenPath(QFileInfo(fileName).absolutePath());
 
+}
+
+void MainWindow::Exit()
+{
+    close();
+}
+
+void MainWindow::on_action_O_triggered()
+{
+    qDebug() << "Open File Triggered, on automatic connection.";
 }

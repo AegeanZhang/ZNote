@@ -27,6 +27,10 @@ private:
 
 private slots:
     void OpenFile();
+    void Exit();
+
+    // 自动连接的槽函数
+    void on_action_O_triggered();
 
 private:
     Ui::MainWindow *ui;

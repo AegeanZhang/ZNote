@@ -14,9 +14,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         src/main.cpp
-        src/mainwindow.cpp
-        src/mainwindow.h
-        src/mainwindow.ui
+        src/main_window.cpp
+        src/main_window.h
+        src/main_window.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
