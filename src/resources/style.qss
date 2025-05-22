@@ -1,0 +1,12 @@
+QPlainTextEdit[flat="true"],
+QLineEdit[flat="true"] {
+    border: none;
+    background: #f9f9f9;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+QPlainTextEdit#plainTextEdit {
+    border: none;
+    background: #e9e9e9;
+}

@@ -24,17 +24,18 @@
     <Filter Include="Header Files\config">
       <UniqueIdentifier>{b60af7af-22fb-4755-b72e-dde8fa599aab}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="ZNote.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
+    <Filter Include="Header Files\resources">
+      <UniqueIdentifier>{36c049d0-82f5-4f3c-9607-19b403db7357}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\main_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\StyleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -52,5 +53,18 @@
     <ClInclude Include="..\..\src\config\app_settings.h">
       <Filter>Header Files\config</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\StyleManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\resources\style.qss">
+      <Filter>Header Files\resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\src\ZNote.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

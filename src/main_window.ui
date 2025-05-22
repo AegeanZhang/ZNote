@@ -14,11 +14,12 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QTextEdit {
-    border: none;
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="leftMargin">
      <number>0</number>
@@ -33,14 +34,9 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="styleSheet">
-       <string notr="true">QTextEdit {
-    border: none;
-}</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
+       <string notr="true"/>
       </property>
      </widget>
     </item>

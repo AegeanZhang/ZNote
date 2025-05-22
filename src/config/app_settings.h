@@ -3,6 +3,7 @@
 
 #include <QSettings>
 #include <QDir>
+#include <QFont>
 
 class AppSettings{
 public:
@@ -13,6 +14,24 @@ public:
 
     static inline void setLastOpenPath(const QString& path) {
         settings().setValue("lastOpenPath", path);
+    }
+
+    // 获取编辑器字体
+    static inline QFont editorFont() {
+        QFont defaultFont("Microsoft YaHei", 12);
+        defaultFont.setStyleStrategy(QFont::PreferAntialias);
+
+        if (settings().contains("editorFont")) {
+            QFont font;
+            font.fromString(settings().value("editorFont").toString());
+            return font;
+        }
+        return defaultFont;
+    }
+
+    // 设置编辑器字体
+    static inline void setEditorFont(const QFont& font) {
+        settings().setValue("editorFont", font.toString());
     }
 
 public:

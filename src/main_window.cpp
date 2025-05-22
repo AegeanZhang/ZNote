@@ -2,30 +2,37 @@
 #include "./ui_main_window.h"
 
 #include "config/app_settings.h"
+#include "StyleManager.h"
 
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QFontDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // 应用全局样式
+    StyleManager::loadGlobalStyle(this, ":/ZNote/resources/style.qss");
     
     readSettings();
 
     connect(ui->action_O, &QAction::triggered, this, &MainWindow::OpenFile);
     connect(ui->action_X, &QAction::triggered, this, &MainWindow::Exit);
+    connect(ui->action_F_2, &QAction::triggered, this, &MainWindow::selectFont);
 
     /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
-    ui->textEdit->setFont(font);*/
+    ui->plainTextEdit->setFont(font);*/
 
-    QFont font("Microsoft YaHei", 12);
+    //QFont font("Microsoft YaHei", 12);
+    QFont font = AppSettings::editorFont();
     font.setStyleStrategy(QFont::PreferAntialias);
-    ui->textEdit->setFont(font);
-    ui->textEdit->setAcceptRichText(false);
-    ui->textEdit->setStyleSheet("QTextEdit { line-height: 1.5; }");
+    ui->plainTextEdit->setFont(font);
+    //ui->plainTextEdit->setAcceptRichText(false);
+    ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 1.5; }");
 }
 
 MainWindow::~MainWindow()
@@ -103,9 +110,12 @@ void MainWindow::OpenFile()
         return;
     }
 
-    QTextStream in(&file);
-    QString content = in.readAll();
-    ui->textEdit->setPlainText(content);
+    ui->plainTextEdit->clear(); // 清空文本编辑器
+
+    // 使用 QFile 直接读取文件内容，避免 QTextStream 的编码问题
+    QByteArray fileData = file.readAll();
+    QString content = QString::fromUtf8(fileData); // 使用 UTF-8 编码读取文件内容
+    ui->plainTextEdit->setPlainText(content);
     file.close();
 
     //写入lastOpenPath
@@ -116,6 +126,20 @@ void MainWindow::OpenFile()
 void MainWindow::Exit()
 {
     close();
+}
+
+void MainWindow::selectFont()
+{
+    bool ok;
+    QFont currentFont = ui->plainTextEdit->font();  // 获取当前使用的字体
+    QFont font = QFontDialog::getFont(&ok, currentFont, this);
+    if (ok) {
+        // 用户选择了字体并点击了"确定"
+        ui->plainTextEdit->setFont(font);
+
+        // 保存字体设置
+        AppSettings::setEditorFont(font);
+    }
 }
 
 void MainWindow::on_action_O_triggered()

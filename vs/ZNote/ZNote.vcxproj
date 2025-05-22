@@ -92,7 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="ZNote.qrc" />
+    <ClCompile Include="..\..\src\StyleManager.cpp" />
     <QtUic Include="..\..\src\main_window.ui" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\main_window.cpp" />
@@ -102,6 +102,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h" />
+    <ClInclude Include="..\..\src\StyleManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\resources\style.qss" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\src\ZNote.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
