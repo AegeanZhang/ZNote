@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/ZNote">
-        <file>resources/style.qss</file>
+        <file>styles/style.qss</file>
     </qresource>
 </RCC>

@@ -1,70 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="resources">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Form Files">
+    <Filter Include="src">
       <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
       <Extensions>ui</Extensions>
     </Filter>
-    <Filter Include="Translation Files">
-      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
-      <Extensions>ts</Extensions>
-    </Filter>
-    <Filter Include="Header Files\config">
+    <Filter Include="src\config">
       <UniqueIdentifier>{b60af7af-22fb-4755-b72e-dde8fa599aab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\resources">
-      <UniqueIdentifier>{36c049d0-82f5-4f3c-9607-19b403db7357}</UniqueIdentifier>
+    <Filter Include="resources\styles">
+      <UniqueIdentifier>{fdb20c59-6ec4-4dd7-a66b-49f47c492080}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\main_window.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\StyleManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\..\src\main_window.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\main_window.ui">
-      <Filter>Form Files</Filter>
+      <Filter>src</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h">
-      <Filter>Header Files\config</Filter>
+      <Filter>src\config</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\StyleManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\src\resources\style.qss">
-      <Filter>Header Files\resources</Filter>
-    </None>
+    <QtRcc Include="..\..\resources\ZNote.qrc">
+      <Filter>resources</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="..\..\src\ZNote.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
+    <QtMoc Include="..\..\src\main_window.h">
+      <Filter>src</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\resources\styles\style.qss">
+      <Filter>resources\styles</Filter>
+    </None>
   </ItemGroup>
 </Project>

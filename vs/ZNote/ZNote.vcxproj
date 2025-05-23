@@ -105,10 +105,10 @@
     <ClInclude Include="..\..\src\StyleManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\src\resources\style.qss" />
+    <None Include="..\..\resources\styles\style.qss" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="..\..\src\ZNote.qrc" />
+    <QtRcc Include="..\..\resources\ZNote.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // 应用全局样式
-    StyleManager::loadGlobalStyle(this, ":/ZNote/resources/style.qss");
+    StyleManager::loadGlobalStyle(this, ":/ZNote/styles/style.qss");
     
     readSettings();
 
