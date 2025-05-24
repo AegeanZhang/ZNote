@@ -25,12 +25,15 @@ private:
     void readSettings();
     void writeSettings();
 
+    void setConnections();
+
 private slots:
     void OpenFile();
     void Exit();
     void selectFont();
+    void aboutDialog();
 
-    // 自动连接的槽函数
+    // 自动连接的槽函数, 测试用的后面删除
     void on_action_O_triggered();
 
 private:

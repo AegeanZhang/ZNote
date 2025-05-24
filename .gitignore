@@ -12,6 +12,11 @@
 /lib/
 /dist/
 
+# === CMake 的用户本地设置 ===
+CMakeLists.txt.user
+CMakePresets.json
+CMakeUserPresets.json
+
 # === 编译生成文件 ===
 CMakeFiles/
 CMakeCache.txt
@@ -55,3 +60,6 @@ desktop.ini
 .idea/
 .vs
 x64
+
+# === 其他 ===
+temp

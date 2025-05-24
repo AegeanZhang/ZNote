@@ -93,16 +93,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\StyleManager.cpp" />
+    <ClCompile Include="..\..\src\ui\dialogs\about_dialog.cpp" />
+    <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp" />
+    <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp" />
     <QtUic Include="..\..\src\main_window.ui" />
     <ClCompile Include="..\..\src\main.cpp" />
-    <ClCompile Include="..\..\src\main_window.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\..\src\main_window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h" />
     <ClInclude Include="..\..\src\StyleManager.h" />
+    <QtMoc Include="..\..\src\ui\mainwindow\main_window.h" />
+    <QtMoc Include="..\..\src\ui\dialogs\about_dialog.h" />
+    <QtMoc Include="..\..\src\ui\widgets\tool_button.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\resources\styles\style.qss" />
@@ -112,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\resources\icons\main_icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

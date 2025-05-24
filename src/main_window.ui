@@ -281,7 +281,7 @@
   </action>
   <action name="action_A_3">
    <property name="text">
-    <string>关于记事本(&amp;A)</string>
+    <string>关于ZNote(&amp;A)</string>
    </property>
   </action>
   <action name="action_Menu">

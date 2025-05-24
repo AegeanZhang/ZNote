@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/ZNote">
         <file>styles/style.qss</file>
+        <file>icons/main_icon.png</file>
+        <file>icons/toolbar_setting.png</file>
     </qresource>
 </RCC>

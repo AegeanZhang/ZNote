@@ -1,13 +1,18 @@
 #include "main_window.h"
 #include "./ui_main_window.h"
 
-#include "config/app_settings.h"
-#include "StyleManager.h"
+//#include "../../ui_main_window.h"
+
+#include "../../config/app_settings.h"
+#include "../../StyleManager.h"
+#include "../widgets/tool_button.h"
+#include "../dialogs/about_dialog.h"
 
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QFontDialog>
+#include <QToolBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,14 +20,29 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // 设置窗口标题
+    setWindowTitle("ZNote");
+
+    // 创建工具栏
+    QToolBar* toolBar = addToolBar("主工具栏");
+
+    // 添加已有的 QAction 到工具栏
+    ZToolButton* openButton = new ZToolButton(this);
+    //openButton->setText("自定义");
+    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_setting.png"));
+    toolBar->addWidget(openButton);     // 打开文件
+
+    // 你也可以添加分隔符
+    toolBar->addSeparator();
+
     // 应用全局样式
     StyleManager::loadGlobalStyle(this, ":/ZNote/styles/style.qss");
     
     readSettings();
 
-    connect(ui->action_O, &QAction::triggered, this, &MainWindow::OpenFile);
-    connect(ui->action_X, &QAction::triggered, this, &MainWindow::Exit);
-    connect(ui->action_F_2, &QAction::triggered, this, &MainWindow::selectFont);
+    setWindowIcon(QIcon(":/ZNote/icons/main_icon.png"));
+
+    setConnections();    
 
     /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
     ui->plainTextEdit->setFont(font);*/
@@ -32,7 +52,8 @@ MainWindow::MainWindow(QWidget *parent)
     font.setStyleStrategy(QFont::PreferAntialias);
     ui->plainTextEdit->setFont(font);
     //ui->plainTextEdit->setAcceptRichText(false);
-    ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 1.5; }");
+    //ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 1.5; }");
+    ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 5; }");
 }
 
 MainWindow::~MainWindow()
@@ -82,6 +103,15 @@ void MainWindow::writeSettings()
 
     // 保存窗口的状态（最大化、正常等）
     settings.setValue("windowState", saveState());
+}
+
+void MainWindow::setConnections()
+{
+    connect(ui->action_O, &QAction::triggered, this, &MainWindow::OpenFile);
+    connect(ui->action_X, &QAction::triggered, this, &MainWindow::Exit);
+    connect(ui->action_F_2, &QAction::triggered, this, &MainWindow::selectFont);
+
+    connect(ui->action_A_3, &QAction::triggered, this, &MainWindow::aboutDialog);
 }
 
 void MainWindow::OpenFile()
@@ -145,4 +175,13 @@ void MainWindow::selectFont()
 void MainWindow::on_action_O_triggered()
 {
     qDebug() << "Open File Triggered, on automatic connection.";
+}
+
+void MainWindow::aboutDialog()
+{
+    ZAboutDialog* aboutDialog = new ZAboutDialog(this);
+    aboutDialog->setVersion("1.0.0");
+
+    // 显示对话框
+    aboutDialog->exec();
 }

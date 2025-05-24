@@ -15,16 +15,37 @@
     <Filter Include="resources\styles">
       <UniqueIdentifier>{fdb20c59-6ec4-4dd7-a66b-49f47c492080}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resources\icons">
+      <UniqueIdentifier>{94f7ea1e-986f-41db-ac8c-b096f902730f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{080fb172-8134-4121-beb3-c2b16d712d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\dialogs">
+      <UniqueIdentifier>{c5819261-d7f2-46b8-9495-06676bfa07d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\mainwindow">
+      <UniqueIdentifier>{2abdc3f5-fa50-42e7-8236-4ff8d0e59626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\widgets">
+      <UniqueIdentifier>{16a73a2a-874a-4ce1-bdc4-38588cc7fc50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\main_window.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\StyleManager.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp">
+      <Filter>src\ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\dialogs\about_dialog.cpp">
+      <Filter>src\ui\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp">
+      <Filter>src\ui\mainwindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,8 +67,14 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\..\src\main_window.h">
-      <Filter>src</Filter>
+    <QtMoc Include="..\..\src\ui\widgets\tool_button.h">
+      <Filter>src\ui\widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\ui\dialogs\about_dialog.h">
+      <Filter>src\ui\dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\ui\mainwindow\main_window.h">
+      <Filter>src\ui\mainwindow</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -57,5 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\resources\icons\main_icon.png">
+      <Filter>resources\icons</Filter>
+    </Image>
   </ItemGroup>
 </Project>
