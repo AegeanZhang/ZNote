@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-qt_add_resources(RESOURCES src/ZNote.qrc)
+qt_add_resources(ZNote_RESOURCES resources/ZNote.qrc)
 
 set(PROJECT_SOURCES
         src/main.cpp
@@ -21,14 +21,19 @@ set(PROJECT_SOURCES
         src/main_window.ui
         src/StyleManager.h
         src/StyleManager.cpp
+        src/config/app_settings.h
+)
+
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/config
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ZNote
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/config/app_settings.h
-
+        ${ZNote_RESOURCES}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ZNote APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -38,12 +43,14 @@ else()
     if(ANDROID)
         add_library(ZNote SHARED
             ${PROJECT_SOURCES}
+            ${ZNote_RESOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(ZNote
             ${PROJECT_SOURCES}
+            ${ZNote_RESOURCES}
         )
     endif()
 endif()
