@@ -1,8 +1,6 @@
 #include "main_window.h"
 #include "./ui_main_window.h"
 
-//#include "../../ui_main_window.h"
-
 #include "../../config/app_settings.h"
 #include "../../StyleManager.h"
 #include "../widgets/tool_button.h"

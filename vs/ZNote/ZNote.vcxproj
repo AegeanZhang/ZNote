@@ -96,8 +96,9 @@
     <ClCompile Include="..\..\src\ui\dialogs\about_dialog.cpp" />
     <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp" />
     <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp" />
-    <QtUic Include="..\..\src\main_window.ui" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui" />
+    <QtUic Include="..\..\src\ui\mainwindow\main_window.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h" />
@@ -114,6 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\CMakeLists.txt" />
+    <Text Include="..\..\src\CMakeLists.txt" />
+    <Text Include="..\..\src\ui\CMakeLists.txt" />
+    <Text Include="..\..\src\ui\dialogs\CMakeLists.txt" />
+    <Text Include="..\..\src\ui\widgets\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\resources\icons\main_icon.png" />

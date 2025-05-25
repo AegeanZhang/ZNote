@@ -18,6 +18,9 @@ public:
     void setWebsite(const QString& website);
     void setEmail(const QString& email);
     void setGithub(const QString& github);
+
+private slots:
+    void btnOkClicked();
 };
 
 #endif // ABUT_DIALOG_H

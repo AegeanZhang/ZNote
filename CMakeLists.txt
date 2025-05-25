@@ -14,14 +14,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 qt_add_resources(ZNote_RESOURCES resources/ZNote.qrc)
 
+add_subdirectory(src)
+
 set(PROJECT_SOURCES
-        src/main.cpp
-        src/main_window.cpp
-        src/main_window.h
-        src/main_window.ui
-        src/StyleManager.h
-        src/StyleManager.cpp
-        src/config/app_settings.h
+        ${SRC_SOURCES}
 )
 
 include_directories(

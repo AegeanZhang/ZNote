@@ -1,0 +1,7 @@
+set(WIDGETS_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/tool_button.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tool_button.h
+)
+
+# 让上级目录可以访问这些源文件
+set(WIDGETS_SOURCES ${WIDGETS_SOURCES} PARENT_SCOPE)

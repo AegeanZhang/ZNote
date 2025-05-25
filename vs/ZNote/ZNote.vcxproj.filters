@@ -49,8 +49,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\..\src\main_window.ui">
-      <Filter>src</Filter>
+    <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui">
+      <Filter>src\ui\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="..\..\src\ui\mainwindow\main_window.ui">
+      <Filter>src\ui\mainwindow</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +87,18 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\CMakeLists.txt" />
+    <Text Include="..\..\src\ui\dialogs\CMakeLists.txt">
+      <Filter>src\ui\dialogs</Filter>
+    </Text>
+    <Text Include="..\..\src\ui\CMakeLists.txt">
+      <Filter>src\ui</Filter>
+    </Text>
+    <Text Include="..\..\src\CMakeLists.txt">
+      <Filter>src</Filter>
+    </Text>
+    <Text Include="..\..\src\ui\widgets\CMakeLists.txt">
+      <Filter>src\ui\widgets</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\resources\icons\main_icon.png">
