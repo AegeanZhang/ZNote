@@ -1,10 +1,8 @@
 add_subdirectory(ui)
 
 set(SRC_SOURCES
-    src/main.cpp
-    src/StyleManager.cpp
-    src/StyleManager.h
-    src/config/app_settings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/app_settings.h
     ${UI_SOURCES}
     PARENT_SCOPE
 )

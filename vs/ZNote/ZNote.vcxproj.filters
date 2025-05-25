@@ -35,9 +35,6 @@
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\StyleManager.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp">
       <Filter>src\ui\widgets</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp">
       <Filter>src\ui\mainwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\style_manager.cpp">
+      <Filter>src\ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,8 +60,8 @@
     <ClInclude Include="..\..\src\config\app_settings.h">
       <Filter>src\config</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\StyleManager.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\..\src\ui\style_manager.h">
+      <Filter>src\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +98,9 @@
     </Text>
     <Text Include="..\..\src\ui\widgets\CMakeLists.txt">
       <Filter>src\ui\widgets</Filter>
+    </Text>
+    <Text Include="..\..\src\ui\mainwindow\CMakeLists.txt">
+      <Filter>src\ui\mainwindow</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

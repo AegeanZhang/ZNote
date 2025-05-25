@@ -2,7 +2,7 @@
 #include "./ui_main_window.h"
 
 #include "../../config/app_settings.h"
-#include "../../StyleManager.h"
+#include "../style_manager.h"
 #include "../widgets/tool_button.h"
 #include "../dialogs/about_dialog.h"
 
@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 创建工具栏
     QToolBar* toolBar = addToolBar("主工具栏");
+    toolBar->setObjectName("mainToolBar");
 
     // 添加已有的 QAction 到工具栏
     ZToolButton* openButton = new ZToolButton(this);

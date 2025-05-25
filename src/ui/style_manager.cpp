@@ -1,4 +1,4 @@
-#include "StyleManager.h"
+#include "style_manager.h"
 #include <QFile>
 #include <QDebug>
 

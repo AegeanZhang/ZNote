@@ -3,5 +3,5 @@ set(WIDGETS_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/tool_button.h
 )
 
-# 让上级目录可以访问这些源文件
+# 璁╀笂绾х洰褰曞彲浠ヨ闂繖浜涙簮鏂囦欢
 set(WIDGETS_SOURCES ${WIDGETS_SOURCES} PARENT_SCOPE)

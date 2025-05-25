@@ -4,8 +4,12 @@
 #include <QLabel>
 #include <QPushButton>
 
-ZAboutDialog::ZAboutDialog(QWidget* parent) 
+ZAboutDialog::ZAboutDialog(QWidget* parent)
+    : QDialog(parent)
+    ,ui(new Ui::ZAboutDialog)
 {
+    ui->setupUi(this);
+
     // 大小不可调整
     setFixedSize(400, 300);
 
@@ -52,7 +56,7 @@ ZAboutDialog::ZAboutDialog(QWidget* parent)
 
 ZAboutDialog::~ZAboutDialog() 
 {
-
+    delete ui;
 }
 
 void ZAboutDialog::setVersion(const QString& version)

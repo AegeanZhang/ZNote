@@ -1,7 +1,15 @@
 #ifndef ABUT_DIALOG_H
 #define ABUT_DIALOG_H
 
+#include "ui_about_dialog.h"
+
 #include <QDialog>
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+    class ZAboutDialog;
+}
+QT_END_NAMESPACE
 
 class ZAboutDialog : public QDialog
 {
@@ -21,6 +29,9 @@ public:
 
 private slots:
     void btnOkClicked();
+
+private:
+    Ui::ZAboutDialog* ui;
 };
 
 #endif // ABUT_DIALOG_H
