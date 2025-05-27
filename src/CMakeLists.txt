@@ -4,5 +4,6 @@ set(SRC_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/config/app_settings.h
     ${UI_SOURCES}
+    ${CORE_SOURCES}
     PARENT_SCOPE
 )

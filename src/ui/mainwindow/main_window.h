@@ -19,6 +19,9 @@ public:
     ~MainWindow();
 
 protected:
+    // setup the main window
+    void setupMainWindow();
+    void setupWorkArea(); 
     void closeEvent(QCloseEvent *event) override;
 
 private:
@@ -29,6 +32,7 @@ private:
 
 private slots:
     void OpenFile();
+    void newFile();
     void Exit();
     void selectFont();
     void aboutDialog();

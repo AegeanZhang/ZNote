@@ -92,9 +92,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\core\document.cpp" />
     <ClCompile Include="..\..\src\ui\dialogs\about_dialog.cpp" />
     <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp" />
     <ClCompile Include="..\..\src\ui\style_manager.cpp" />
+    <ClCompile Include="..\..\src\ui\widgets\tab_widget.cpp" />
     <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui" />
@@ -102,7 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h" />
+    <ClInclude Include="..\..\src\core\document.h" />
     <ClInclude Include="..\..\src\ui\style_manager.h" />
+    <QtMoc Include="..\..\src\ui\widgets\tab_widget.h" />
     <QtMoc Include="..\..\src\ui\mainwindow\main_window.h" />
     <QtMoc Include="..\..\src\ui\dialogs\about_dialog.h" />
     <QtMoc Include="..\..\src\ui\widgets\tool_button.h" />
@@ -116,6 +120,7 @@
   <ItemGroup>
     <Text Include="..\..\CMakeLists.txt" />
     <Text Include="..\..\src\CMakeLists.txt" />
+    <Text Include="..\..\src\core\CMakeLists.txt" />
     <Text Include="..\..\src\ui\CMakeLists.txt" />
     <Text Include="..\..\src\ui\dialogs\CMakeLists.txt" />
     <Text Include="..\..\src\ui\mainwindow\CMakeLists.txt" />

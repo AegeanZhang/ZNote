@@ -30,6 +30,9 @@
     <Filter Include="src\ui\widgets">
       <UniqueIdentifier>{16a73a2a-874a-4ce1-bdc4-38588cc7fc50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{d435d32b-51a8-4cd7-9290-63f898e69fbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -47,6 +50,12 @@
     <ClCompile Include="..\..\src\ui\style_manager.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\core\document.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\widgets\tab_widget.cpp">
+      <Filter>src\ui\widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui">
@@ -63,6 +72,9 @@
     <ClInclude Include="..\..\src\ui\style_manager.h">
       <Filter>src\ui</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\core\document.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="..\..\resources\ZNote.qrc">
@@ -78,6 +90,9 @@
     </QtMoc>
     <QtMoc Include="..\..\src\ui\mainwindow\main_window.h">
       <Filter>src\ui\mainwindow</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\ui\widgets\tab_widget.h">
+      <Filter>src\ui\widgets</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +116,9 @@
     </Text>
     <Text Include="..\..\src\ui\mainwindow\CMakeLists.txt">
       <Filter>src\ui\mainwindow</Filter>
+    </Text>
+    <Text Include="..\..\src\core\CMakeLists.txt">
+      <Filter>src\core</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

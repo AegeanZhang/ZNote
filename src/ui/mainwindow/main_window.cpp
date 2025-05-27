@@ -18,46 +18,52 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // 设置窗口标题
-    setWindowTitle("ZNote");
-
-    // 创建工具栏
-    QToolBar* toolBar = addToolBar("主工具栏");
-    toolBar->setObjectName("mainToolBar");
-
-    // 添加已有的 QAction 到工具栏
-    ZToolButton* openButton = new ZToolButton(this);
-    //openButton->setText("自定义");
-    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_setting.png"));
-    toolBar->addWidget(openButton);     // 打开文件
-
-    // 你也可以添加分隔符
-    toolBar->addSeparator();
-
-    // 应用全局样式
-    StyleManager::loadGlobalStyle(this, ":/ZNote/styles/style.qss");
-    
     readSettings();
 
-    setWindowIcon(QIcon(":/ZNote/icons/main_icon.png"));
-
-    setConnections();    
-
-    /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
-    ui->plainTextEdit->setFont(font);*/
-
-    //QFont font("Microsoft YaHei", 12);
-    QFont font = AppSettings::editorFont();
-    font.setStyleStrategy(QFont::PreferAntialias);
-    ui->plainTextEdit->setFont(font);
-    //ui->plainTextEdit->setAcceptRichText(false);
-    //ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 1.5; }");
-    ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 5; }");
+    setupMainWindow();
+    setConnections();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setupMainWindow()
+{
+    // 应用全局样式
+    StyleManager::loadGlobalStyle(this, ":/ZNote/styles/style.qss");
+
+    // 设置窗口标题
+    setWindowTitle("ZNote");
+    setWindowIcon(QIcon(":/ZNote/icons/main_icon.png"));
+
+    // 添加已有的 QAction 到工具栏
+    ZToolButton* openButton = new ZToolButton(this);
+    //openButton->setText("自定义");
+    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_setting.png"));
+    ui->toolBar->addWidget(openButton);     // 打开文件
+    ui->toolBar->addSeparator();   
+
+    setupWorkArea();
+}
+
+void MainWindow::setupWorkArea()
+{
+    // 在这里添加工作区初始化相关代码
+    ui->splitter->setStretchFactor(1, 6); // 设置左侧编辑器占据剩余空间
+
+
+    /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
+    ui->plainTextEdit->setFont(font);*/
+
+    //QFont font("Microsoft YaHei", 12);
+    /*QFont font = AppSettings::editorFont();
+    font.setStyleStrategy(QFont::PreferAntialias);
+    ui->plainTextEdit->setFont(font);
+    //ui->plainTextEdit->setAcceptRichText(false);
+    //ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 1.5; }");
+    ui->plainTextEdit->setStyleSheet("QplainTextEdit { line-height: 5; }");*/
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -106,6 +112,7 @@ void MainWindow::writeSettings()
 
 void MainWindow::setConnections()
 {
+    connect(ui->action_N, &QAction::triggered, this, &MainWindow::newFile);
     connect(ui->action_O, &QAction::triggered, this, &MainWindow::OpenFile);
     connect(ui->action_X, &QAction::triggered, this, &MainWindow::Exit);
     connect(ui->action_F_2, &QAction::triggered, this, &MainWindow::selectFont);
@@ -133,7 +140,7 @@ void MainWindow::OpenFile()
 
     qDebug() << "选择的文件是:" << fileName;
 
-    QFile file(fileName);
+    /*QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "错误", "无法打开文件");
         return;
@@ -146,10 +153,16 @@ void MainWindow::OpenFile()
     QString content = QString::fromUtf8(fileData); // 使用 UTF-8 编码读取文件内容
     ui->plainTextEdit->setPlainText(content);
     file.close();
-
+    */
     //写入lastOpenPath
     AppSettings::setLastOpenPath(QFileInfo(fileName).absolutePath());
 
+}
+
+void MainWindow::newFile()
+{
+    // 创建一个标签页
+    ui->tabWidget->addTabWidget(new QWidget(), "新建文件");
 }
 
 void MainWindow::Exit()
@@ -159,7 +172,7 @@ void MainWindow::Exit()
 
 void MainWindow::selectFont()
 {
-    bool ok;
+    /*bool ok;
     QFont currentFont = ui->plainTextEdit->font();  // 获取当前使用的字体
     QFont font = QFontDialog::getFont(&ok, currentFont, this);
     if (ok) {
@@ -169,6 +182,7 @@ void MainWindow::selectFont()
         // 保存字体设置
         AppSettings::setEditorFont(font);
     }
+    */
 }
 
 void MainWindow::on_action_O_triggered()
