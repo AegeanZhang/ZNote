@@ -96,16 +96,21 @@
     <ClCompile Include="..\..\src\ui\dialogs\about_dialog.cpp" />
     <ClCompile Include="..\..\src\ui\mainwindow\main_window.cpp" />
     <ClCompile Include="..\..\src\ui\style_manager.cpp" />
+    <ClCompile Include="..\..\src\ui\widgets\tab_page.cpp" />
     <ClCompile Include="..\..\src\ui\widgets\tab_widget.cpp" />
+    <ClCompile Include="..\..\src\ui\widgets\text_editor.cpp" />
     <ClCompile Include="..\..\src\ui\widgets\tool_button.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui" />
     <QtUic Include="..\..\src\ui\mainwindow\main_window.ui" />
+    <QtUic Include="..\..\src\ui\widgets\tab_page.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\config\app_settings.h" />
     <ClInclude Include="..\..\src\core\document.h" />
     <ClInclude Include="..\..\src\ui\style_manager.h" />
+    <QtMoc Include="..\..\src\ui\widgets\text_editor.h" />
+    <QtMoc Include="..\..\src\ui\widgets\tab_page.h" />
     <QtMoc Include="..\..\src\ui\widgets\tab_widget.h" />
     <QtMoc Include="..\..\src\ui\mainwindow\main_window.h" />
     <QtMoc Include="..\..\src\ui\dialogs\about_dialog.h" />

@@ -56,6 +56,12 @@
     <ClCompile Include="..\..\src\ui\widgets\tab_widget.cpp">
       <Filter>src\ui\widgets</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\ui\widgets\tab_page.cpp">
+      <Filter>src\ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\widgets\text_editor.cpp">
+      <Filter>src\ui\widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\ui\dialogs\about_dialog.ui">
@@ -63,6 +69,9 @@
     </QtUic>
     <QtUic Include="..\..\src\ui\mainwindow\main_window.ui">
       <Filter>src\ui\mainwindow</Filter>
+    </QtUic>
+    <QtUic Include="..\..\src\ui\widgets\tab_page.ui">
+      <Filter>src\ui\widgets</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +101,12 @@
       <Filter>src\ui\mainwindow</Filter>
     </QtMoc>
     <QtMoc Include="..\..\src\ui\widgets\tab_widget.h">
+      <Filter>src\ui\widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\ui\widgets\tab_page.h">
+      <Filter>src\ui\widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\ui\widgets\text_editor.h">
       <Filter>src\ui\widgets</Filter>
     </QtMoc>
   </ItemGroup>
