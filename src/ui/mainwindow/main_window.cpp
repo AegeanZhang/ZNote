@@ -3,8 +3,9 @@
 
 #include "../../config/app_settings.h"
 #include "../style_manager.h"
-#include "../widgets/tool_button.h"
 #include "../dialogs/about_dialog.h"
+#include "../widgets/tool_button.h"
+#include "../widgets/tab_page.h"
 
 #include <QDebug>
 #include <QFileDialog>
@@ -38,12 +39,20 @@ void MainWindow::setupMainWindow()
     setWindowTitle("ZNote");
     setWindowIcon(QIcon(":/ZNote/icons/main_icon.png"));
 
-    // 添加已有的 QAction 到工具栏
     ZToolButton* openButton = new ZToolButton(this);
-    //openButton->setText("自定义");
-    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_setting.png"));
-    ui->toolBar->addWidget(openButton);     // 打开文件
-    ui->toolBar->addSeparator();   
+    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_new.png"));
+    ui->toolBar->addWidget(openButton);
+    ui->toolBar->addSeparator();
+
+    ZToolButton* saveButton = new ZToolButton(this);
+    saveButton->setIcon(QIcon(":/ZNote/icons/toolbar_save.png"));
+    ui->toolBar->addWidget(saveButton);
+    ui->toolBar->addSeparator();
+
+    ZToolButton* settingButton = new ZToolButton(this);
+    settingButton->setIcon(QIcon(":/ZNote/icons/toolbar_setting.png"));
+    ui->toolBar->addWidget(settingButton);
+    ui->toolBar->addSeparator();
 
     setupWorkArea();
 }
@@ -52,6 +61,7 @@ void MainWindow::setupWorkArea()
 {
     // 在这里添加工作区初始化相关代码
     ui->splitter->setStretchFactor(1, 6); // 设置左侧编辑器占据剩余空间
+    //ui->tabWidget->tabBar()->hide();
 
 
     /*QFont font("微软雅黑", 12); // 或 QFont("Lucida Console", 10);
@@ -162,7 +172,7 @@ void MainWindow::OpenFile()
 void MainWindow::newFile()
 {
     // 创建一个标签页
-    ui->tabWidget->addTabWidget(new QWidget(), "新建文件");
+    ui->tabWidget->addTabWidget(new ZTabPage(), "新建文件");
 }
 
 void MainWindow::Exit()

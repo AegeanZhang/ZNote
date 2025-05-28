@@ -3,5 +3,7 @@
         <file>styles/style.qss</file>
         <file>icons/main_icon.png</file>
         <file>icons/toolbar_setting.png</file>
+        <file>icons/toolbar_save.png</file>
+        <file>icons/toolbar_new.png</file>
     </qresource>
 </RCC>
