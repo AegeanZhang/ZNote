@@ -39,10 +39,11 @@ void MainWindow::setupMainWindow()
     setWindowTitle("ZNote");
     setWindowIcon(QIcon(":/ZNote/icons/main_icon.png"));
 
-    ZToolButton* openButton = new ZToolButton(this);
-    openButton->setIcon(QIcon(":/ZNote/icons/toolbar_new.png"));
-    ui->toolBar->addWidget(openButton);
+    ZToolButton* newButton = new ZToolButton(this);
+    newButton->setIcon(QIcon(":/ZNote/icons/toolbar_new.png"));
+    ui->toolBar->addWidget(newButton);
     ui->toolBar->addSeparator();
+    connect(newButton, &ZToolButton::clicked, this, &MainWindow::newFile);
 
     ZToolButton* saveButton = new ZToolButton(this);
     saveButton->setIcon(QIcon(":/ZNote/icons/toolbar_save.png"));
