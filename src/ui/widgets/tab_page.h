@@ -15,13 +15,13 @@ class ZTabPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ZTabPage(QWidget* parent = nullptr)
-        : QWidget(parent)
-        , ui(new Ui::ZTabPage)
-    {
-        ui->setupUi(this);
-    }
+    explicit ZTabPage(QWidget* parent = nullptr);
     ~ZTabPage() override = default;
+
+public:
+    QPlainTextEdit* textEditor() const {
+        return ui->plainTextEdit;
+    }
 
 private:
     Ui::ZTabPage* ui;

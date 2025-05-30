@@ -20,7 +20,6 @@ void ZTabWidget::addTabWidget(QWidget* widget, const QString& label)
 
 void ZTabWidget::closeTab(int index)
 {
-    //QWidget* widget = widget(index);
     QWidget* widget = this->widget(index);
     if (widget) {
         removeTab(index);
