@@ -152,23 +152,9 @@ void MainWindow::OpenFile()
     qDebug() << "选择的文件是:" << fileName;
 
     QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "错误", "无法打开文件");
-        return;
-    }
-
     ZTabPage* tabPage = new ZTabPage();
-    ui->tabWidget->addTabWidget(tabPage, QFileInfo(fileName).fileName()); // 添加新标签页
+    ui->tabWidget->addTabWidget(tabPage, file); // 添加新标签页并传入文件对象
 
-    tabPage->textEditor()->clear(); // 清空文本编辑器
-
-    // 使用 QFile 直接读取文件内容，避免 QTextStream 的编码问题
-    QByteArray fileData = file.readAll();
-    QString content = QString::fromUtf8(fileData); // 使用 UTF-8 编码读取文件内容
-    tabPage->textEditor()->setPlainText(content);
-    file.close();
-    
-    //写入lastOpenPath
     AppSettings::setLastOpenPath(QFileInfo(fileName).absolutePath());
 
 }

@@ -14,8 +14,9 @@
 
 # === CMake 的用户本地设置 ===
 CMakeLists.txt.user
-CMakePresets.json
-CMakeUserPresets.json
+#CMakePresets.json
+#CMakeUserPresets.json
+CMakeSettings.json
 
 # === 编译生成文件 ===
 CMakeFiles/
@@ -63,3 +64,4 @@ x64
 
 # === 其他 ===
 temp
+vcpkg_installed

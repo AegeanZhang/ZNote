@@ -2,6 +2,7 @@
 #define TAB_WIGET_H
 
 #include <QTabWidget>
+#include <QFile>
 
 class ZTabWidget : public QTabWidget
 {
@@ -13,6 +14,7 @@ public:
 public:
     // 添加一个新的标签页
     void addTabWidget(QWidget* widget, const QString& label);
+    void addTabWidget(QWidget* widget, QFile& file);
 
 private slots:
     void closeTab(int index);

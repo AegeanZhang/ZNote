@@ -23,6 +23,10 @@ public:
         return ui->plainTextEdit;
     }
 
+    void openFile(const QFile& file) {
+
+    }
+
 private:
     Ui::ZTabPage* ui;
 };
